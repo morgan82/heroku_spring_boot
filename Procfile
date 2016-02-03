@@ -1,1 +1,1 @@
-web: java  -Dserver.port=$PORT  -Ddatabase.url=$JDBC_DATABASE_URL $JAVA_OPTS -jar target/orders-0.0.1.jar
+web: java  -Dserver.port=$PORT  $JAVA_OPTS -jar target/orders-0.0.1.jar
