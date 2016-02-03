@@ -27,12 +27,20 @@ public class DBConfig {
     public DataSource dataSource() throws URISyntaxException {
         String dbProperty = System.getProperty("database.url");
         DataSourceBuilder builder = DataSourceBuilder.create();
+        log.info("***********************************************");
+        log.info("dbProperty : " + dbProperty);
         if (dbProperty != null) {
             URI dbUri = new URI(dbProperty);
             builder.username(dbUri.getUserInfo().split(":")[0]);
             builder.password(dbUri.getUserInfo().split(":")[1]);
+            log.info("username : " + dbUri.getUserInfo().split(":")[0]);
+            log.info("Password : "+dbUri.getUserInfo().split(":")[1]);
+            log.info("Host : "+dbUri.getHost());
+            log.info("Port : "+dbUri.getPort());
+            log.info("Path : "+dbUri.getPath());
             builder.url("jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath());
         }
+        log.info("////////////////////////////////////////////////////");
         return builder.build();
     }
 //
