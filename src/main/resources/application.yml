@@ -9,6 +9,7 @@ spring:
       datasource:
 #                    url: jdbc:postgresql://localhost:5432/orders
                     url: ${JDBC_DATABASE_URL}
+#                    url: jdbc:postgresql://ec2-54-225-199-245.compute-1.amazonaws.com:5432/dfv7njochm38j7?user=bdzttsebtuygqs&password=rT6UqiUe9ys3CH_z-CXJiF8e11&sslmode=require
 #                    username: lmorganti
 #                    password: 123456
                     driverClassName: org.postgresql.Driver
