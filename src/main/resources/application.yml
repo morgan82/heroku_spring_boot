@@ -3,12 +3,11 @@ spring:
               active: dev
       jpa:
           show-sql: true
-          generate-ddl: true
       jackson:
               date-format: yyyyMMdd
       datasource:
-#                    url: jdbc:postgresql://localhost:5432/orders?user=lmorganti&password=123456
-                    url: ${JDBC_DATABASE_URL}
+                    url: jdbc:postgresql://localhost:5432/orders?user=lmorganti&password=123456
+#                    url: ${JDBC_DATABASE_URL}
                     driverClassName: org.postgresql.Driver
                     maxActive: 10
                     maxIdle: 5
