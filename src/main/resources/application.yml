@@ -6,14 +6,17 @@ spring:
           generate-ddl: true
       jackson:
               date-format: yyyyMMdd
-datasource:
-          mine:
-#              testOnBorrow: true
-#              validationQuery: SELECT 1
-              url: jdbc:postgresql://localhost:5432/orders
-              username: lmorganti
-              password: 123456
-#              driver-class-name: org.postgresql.Driver
+      datasource:
+#                    url: jdbc:postgresql://localhost:5432/orders
+                    username: lmorganti
+                    password: 123456
+                    url: jdbc:postgresql://localhost:5432/orders
+                    driverClassName: org.postgresql.Driver
+                    maxActive: 10
+                    maxIdle: 5
+                    minIdle: 2
+                    initialSize: 5
+                    removeAbandoned=: true
 
 
 logging:
