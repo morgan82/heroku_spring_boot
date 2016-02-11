@@ -2,6 +2,7 @@ package com.globallogic.orders;
 
 import com.globallogic.orders.domain.Order;
 import com.globallogic.orders.repository.OrderRepository;
+import com.globallogic.orders.service.OrderServices;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -26,13 +27,12 @@ public class Application extends SpringBootServletInitializer {
         SpringApplication.run(Application.class, args);   // run() devuelve ApplicationContext. Se devuelven los Beans creados
     }
     @Bean
-    public CommandLineRunner boostrap(OrderRepository repository) {
+    public CommandLineRunner boostrap(OrderServices service) {
         return (args) -> {
-
-            repository.save(new Order("1",new Date(),"001",1));
-            repository.save(new Order("2",new Date(),"001",2));
-            repository.save(new Order("3",new Date(),"001",3));
-            repository.save(new Order("4",new Date(),"001",4));
+            service.add(new Order("", new Date(), "001", 1));
+            service.add(new Order("", new Date(), "002", 1));
+            service.add(new Order("", new Date(), "003", 1));
+            service.add(new Order("", new Date(), "004", 1));
 
         };
     }
